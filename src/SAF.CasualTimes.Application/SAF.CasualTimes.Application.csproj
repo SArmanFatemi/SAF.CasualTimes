@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SAF.CasualTimes.Domain\SAF.CasualTimes.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -17,4 +17,8 @@
     <ProjectReference Include="..\SAF.CasualTimes.Infrastructure\SAF.CasualTimes.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>

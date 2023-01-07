@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAF.CasualTimes.Api", "src\SAF.CasualTimes.Api\SAF.CasualTimes.Api.csproj", "{F2329A0F-B9EB-4230-80FE-2A34088EEB77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAF.CasualTimes.Contracts", "src\SAF.CasualTimes.Contracts\SAF.CasualTimes.Contracts.csproj", "{06592E49-B501-4CDB-9E23-385DD7652FE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F2329A0F-B9EB-4230-80FE-2A34088EEB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2329A0F-B9EB-4230-80FE-2A34088EEB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2329A0F-B9EB-4230-80FE-2A34088EEB77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06592E49-B501-4CDB-9E23-385DD7652FE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06592E49-B501-4CDB-9E23-385DD7652FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06592E49-B501-4CDB-9E23-385DD7652FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06592E49-B501-4CDB-9E23-385DD7652FE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

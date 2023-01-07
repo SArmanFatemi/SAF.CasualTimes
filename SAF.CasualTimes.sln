@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAF.CasualTimes.Contracts",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAF.CasualTimes.Infrastructure", "src\SAF.CasualTimes.Infrastructure\SAF.CasualTimes.Infrastructure.csproj", "{DCD673C4-4ADB-4F11-8CD7-58DFE64CCA45}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAF.CasualTimes.Application", "src\SAF.CasualTimes.Application\SAF.CasualTimes.Application.csproj", "{05B9E530-9D7C-4A89-AE48-A7566777C058}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DCD673C4-4ADB-4F11-8CD7-58DFE64CCA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCD673C4-4ADB-4F11-8CD7-58DFE64CCA45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCD673C4-4ADB-4F11-8CD7-58DFE64CCA45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05B9E530-9D7C-4A89-AE48-A7566777C058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05B9E530-9D7C-4A89-AE48-A7566777C058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05B9E530-9D7C-4A89-AE48-A7566777C058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05B9E530-9D7C-4A89-AE48-A7566777C058}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

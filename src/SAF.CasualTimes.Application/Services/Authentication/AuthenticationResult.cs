@@ -1,9 +1,5 @@
-﻿namespace SAF.CasualTimes.Application.Services.Authentication;
+﻿using SAF.CasualTimes.Domain.Entities;
 
-public record AuthenticationResult(
-	Guid Id,
-	string FirstName,
-	string LastNamem,
-	string Email,
-	string Token
-);
+namespace SAF.CasualTimes.Application.Services.Authentication;
+
+public record AuthenticationResult(User User, string Token);

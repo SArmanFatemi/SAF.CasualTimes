@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using SAF.CasualTimes.Application.Common.Interfaces.Authentication;
 using SAF.CasualTimes.Application.Common.Interfaces.Services;
+using SAF.CasualTimes.Domain.Entities;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -21,7 +22,7 @@ internal class JwtTokenGenerator : IJwtTokenGenerator
 		this.jwtSettings = jwtSettings.Value;
 	}
 
-	public string GenerateToken(Guid userId, string firstName, string lastName)
+	public string GenerateToken(User user)
 	{
 		var signingCredentials = new SigningCredentials(
 			new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Secret)),
@@ -30,9 +31,9 @@ internal class JwtTokenGenerator : IJwtTokenGenerator
 
 		var claims = new[]
 		{
-			new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()),
-			new Claim(JwtRegisteredClaimNames.GivenName, firstName),
-			new Claim(JwtRegisteredClaimNames.FamilyName, lastName),
+			new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+			new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName),
+			new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName),
 			new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
 		};
 

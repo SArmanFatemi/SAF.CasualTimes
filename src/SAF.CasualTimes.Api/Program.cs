@@ -1,5 +1,11 @@
+using SAF.CasualTimes.Application.Services;
+using SAF.CasualTimes.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 {
+	builder.Services
+		.AddSAFApplication()
+		.AddSAFInfrastructure();
 	builder.Services.AddControllers();
 	builder.Services.AddEndpointsApiExplorer();
 	builder.Services.AddSwaggerGen();

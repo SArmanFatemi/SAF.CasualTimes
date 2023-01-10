@@ -1,29 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ErrorOr;
+using Microsoft.AspNetCore.Mvc;
 using SAF.CasualTimes.Application.Services.Authentication;
 using SAF.CasualTimes.Contracts.Authentication;
 
 namespace SAF.CasualTimes.Api.Controllers;
 
 [Route("api/auth")]
-[ApiController]
-public class AuthenticationController : ControllerBase
+public class AuthenticationController : ApiController
 {
 	[HttpPost("register")]
 	public IActionResult Register(
-		[FromServices] IAuthenticationService authenticationService, 
+		[FromServices] IAuthenticationService authenticationService,
 		RegisterRequest request)
 	{
-		var authResult = authenticationService.Register(request.FirstName, request.LastNamem, request.Email, request.Password);
+		ErrorOr<AuthenticationResult> authResult = authenticationService
+			.Register(request.FirstName, request.LastName, request.Email, request.Password);
 
-		var response = new AuthenticationResponse(
-			authResult.User.Id,
-			authResult.User.FirstName,
-			authResult.User.LastName,
-			authResult.User.Email,
-			authResult.Token
-		);
-
-		return Ok(response);
+		return authResult.Match(authResult => Ok(MapAuthReuslt(authResult)), Problem);
 	}
 
 	[HttpPost("login")]
@@ -33,14 +26,18 @@ public class AuthenticationController : ControllerBase
 	{
 		var authResult = authenticationService.Login(request.Email, request.Password);
 
-		var response = new AuthenticationResponse(
+		return authResult.Match(authResult => Ok(MapAuthReuslt(authResult)), Problem);
+	}
+
+	private static AuthenticationResponse MapAuthReuslt(AuthenticationResult authResult)
+	{
+		return new(
 			authResult.User.Id,
 			authResult.User.FirstName,
 			authResult.User.LastName,
 			authResult.User.Email,
 			authResult.Token
 		);
-
-		return Ok(response);
 	}
+
 }
